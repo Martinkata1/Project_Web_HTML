@@ -1,51 +1,20 @@
-(function(){
-  const hamburger = document.getElementById('hamburger');
-  const drawer = document.getElementById('drawer');
-  const overlay = document.getElementById('overlay');
-  const yearEl = document.getElementById('year');
-  yearEl.textContent = new Date().getFullYear();
+const btn = document.getElementById("menuBtn");
+const nav = document.querySelector(".nav");
 
-  function openDrawer(){
-    drawer.classList.add('open');
-    overlay.classList.add('show');
-    drawer.setAttribute('aria-hidden','false');
-  }
-  function closeDrawer(){
-    drawer.classList.remove('open');
-    overlay.classList.remove('show');
-    drawer.setAttribute('aria-hidden','true');
-  }
+btn.onclick = () => {
+  nav.style.display = nav.style.display === "flex" ? "none" : "flex";
+  nav.style.flexDirection = "column";
+  nav.style.background = "white";
+  nav.style.position = "absolute";
+  nav.style.top = "70px";
+  nav.style.right = "20px";
+  nav.style.padding = "20px";
+};
+// sound toggle for video
+const video = document.getElementById("heroVideo");
+const soundBtn = document.getElementById("soundBtn");
 
-  hamburger.addEventListener('click', ()=>{
-    if(drawer.classList.contains('open')) closeDrawer(); else openDrawer();
-  });
-  overlay.addEventListener('click', closeDrawer);
-  document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeDrawer(); });
-
-  // Smooth scroll for internal links
-  document.querySelectorAll('a[href^="#"]').forEach(a=>{
-    a.addEventListener('click', function(e){
-      const href = this.getAttribute('href');
-      if(href.length>1){
-        e.preventDefault();
-        const el = document.querySelector(href);
-        if(el){ el.scrollIntoView({behavior:'smooth',block:'start'}); }
-        // close drawer on small screens
-        if(window.innerWidth < 768) closeDrawer();
-      }
-    });
-  });
-
-  // Contact form basic handler
-  const form = document.getElementById('contactForm');
-  const formMsg = document.getElementById('formMsg');
-  if(form){
-    form.addEventListener('submit', function(e){
-      e.preventDefault();
-      const data = new FormData(form);
-      // Placeholder: normally you'd send to server.
-      formMsg.textContent = 'Thanks — your message was sent (demo).';
-      form.reset();
-    });
-  }
-})();
+soundBtn.onclick = () => {
+  video.muted = !video.muted;
+  soundBtn.textContent = video.muted ? "🔇" : "🔊";
+};

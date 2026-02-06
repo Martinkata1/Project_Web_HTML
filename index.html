@@ -2,93 +2,74 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Broker — Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Castorie — Property Stories</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <button id="hamburger" aria-label="Open menu">☰</button>
-  <aside id="drawer" class="drawer" aria-hidden="true">
-    <div class="brand">
-      <h1>Broker</h1>
-      <p class="sub">Professional Portfolio</p>
-    </div>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#about">About Us</a>
-      <a href="#services">Services</a>
-      <a href="#portfolio">Portfolio</a>
-      <a href="#team">Team</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <div class="drawer-footer">
-      <small>&copy; <span id="year"></span> Broker</small>
-    </div>
-  </aside>
 
-  <div id="overlay" class="overlay"></div>
+<header class="header">
+  <div class="logo">CASTORIÈ</div>
 
-  <main class="content">
-    <section id="home" class="hero">
-      <div class="container">
-        <h2>Hello — I'm Alex Broker</h2>
-        <p class="lead">Helping clients buy, sell and invest with clarity and confidence.</p>
-        <p><a class="btn" href="#contact">Get in touch</a></p>
-      </div>
-    </section>
+  <nav class="nav">
+    <a href="#">Home</a>
+    <a href="#">Properties</a>
+    <a href="#">Stories</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+  </nav>
 
-    <section id="about" class="panel">
-      <div class="container">
-        <h3>About Us</h3>
-        <p>We are a boutique brokerage company with a track record of strategic deals and trusted client relationships. We focus on personalized service and measurable results.</p>
-      </div>
-    </section>
+  <button class="menu-btn" id="menuBtn">☰</button>
+</header>
 
-    <section id="services" class="panel">
-      <div class="container">
-        <h3>Services</h3>
-        <div class="grid">
-          <div class="card"><h4>Advisory</h4><p>Market insights, valuation and strategy.</p></div>
-          <div class="card"><h4>Transactions</h4><p>Buy/sell negotiation and execution.</p></div>
-          <div class="card"><h4>Portfolio</h4><p>Asset management and reporting.</p></div>
-        </div>
-      </div>
-    </section>
+<section class="hero">
 
-    <section id="portfolio" class="panel">
-      <div class="container">
-        <h3>Portfolio</h3>
-        <p>Selected deals and case studies showing outcomes and impact.</p>
-      </div>
-    </section>
+  <video
+    id="heroVideo"
+    autoplay
+    muted
+    loop
+    playsinline
+    preload="auto"
+  >
+    <source src="video/bSmp0q73VCxH.mp4" type="video/mp4">
+  </video>
 
-    <section id="team" class="panel">
-      <div class="container">
-        <h3>Team</h3>
-        <p>Our small, experienced team brings decades of combined experience.</p>
-      </div>
-    </section>
+  <div class="overlay"></div>
 
-    <section id="contact" class="panel contact-panel">
-      <div class="container">
-        <h3>Contact</h3>
-        <p>Ready to talk? Send a message and we'll reply shortly.</p>
-        <form id="contactForm">
-          <label>Name<input type="text" name="name" required></label>
-          <label>Email<input type="email" name="email" required></label>
-          <label>Message<textarea name="message" rows="5" required></textarea></label>
-          <button type="submit" class="btn primary">Send Message</button>
-        </form>
-        <div id="formMsg" class="form-msg" aria-live="polite"></div>
-      </div>
-    </section>
+  <div class="logo">
+    CASTORIÈ
+    <span>Luxury Property Stories</span>
+  </div>
 
-    <footer class="site-footer">
-      <div class="container">Made with care • <a href="#contact">Contact</a></div>
-    </footer>
-  </main>
+  <button class="menu-btn" aria-label="Menu">☰</button>
 
-  <script src="js/main.js"></script>
+  <button class="sound-btn" id="soundBtn">🔇</button>
+
+</section>
+
+
+<section class="editorial">
+  <article>
+    <h2>Curated properties</h2>
+    <p>Each home is selected for its architecture, location and long-term value.</p>
+  </article>
+  <article>
+    <h2>Personal advisory</h2>
+    <p>We guide buyers and sellers with clarity, strategy and care.</p>
+  </article>
+  <article>
+    <h2>Market insight</h2>
+    <p>Stories, trends and analysis from the real estate world.</p>
+  </article>
+</section>
+
+<footer class="footer">
+  <p>© 2026 Castoriè</p>
+</footer>
+
+<script src="js/main.js"></script>
 </body>
 </html>
