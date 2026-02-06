@@ -1,15 +1,17 @@
-const btn = document.getElementById("menuBtn");
-const nav = document.querySelector(".nav");
+// menu toggle
+const menuBtn = document.getElementById("menuBtn");
+const menuPanel = document.getElementById("menuPanel");
 
-btn.onclick = () => {
-  nav.style.display = nav.style.display === "flex" ? "none" : "flex";
-  nav.style.flexDirection = "column";
-  nav.style.background = "white";
-  nav.style.position = "absolute";
-  nav.style.top = "70px";
-  nav.style.right = "20px";
-  nav.style.padding = "20px";
-};
+menuBtn.addEventListener("click", e => {
+  e.stopPropagation();
+  menuPanel.classList.toggle("open");
+});
+
+document.addEventListener("click", e => {
+  if (!menuPanel.contains(e.target)) {
+    menuPanel.classList.remove("open");
+  }
+});
 // sound toggle for video
 const video = document.getElementById("heroVideo");
 const soundBtn = document.getElementById("soundBtn");
